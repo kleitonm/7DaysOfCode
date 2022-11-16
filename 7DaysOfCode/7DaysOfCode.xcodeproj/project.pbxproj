@@ -12,6 +12,9 @@
 		FBEF80A8292290130066AC0B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEF80A7292290130066AC0B /* UIView.swift */; };
 		FBEF80AA2922C0830066AC0B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEF80A92922C0830066AC0B /* HomeViewController.swift */; };
 		FBF538CA29252EEA00197054 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF538C929252EEA00197054 /* Movie.swift */; };
+		FBF538CC2925598700197054 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF538CB2925598700197054 /* MovieTableViewCell.swift */; };
+		FBF538CE292569D200197054 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF538CD292569D200197054 /* String+.swift */; };
+		FBF538D12925723B00197054 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF538D02925723B00197054 /* Network.swift */; };
 		FBF5A35B291EE0850090C75F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF5A35A291EE0850090C75F /* AppDelegate.swift */; };
 		FBF5A35D291EE0850090C75F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF5A35C291EE0850090C75F /* SceneDelegate.swift */; };
 		FBF5A35F291EE0850090C75F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF5A35E291EE0850090C75F /* ViewController.swift */; };
@@ -47,6 +50,9 @@
 		FBEF80A7292290130066AC0B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FBEF80A92922C0830066AC0B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FBF538C929252EEA00197054 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		FBF538CB2925598700197054 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		FBF538CD292569D200197054 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		FBF538D02925723B00197054 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FBF5A357291EE0850090C75F /* 7DaysOfCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 7DaysOfCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF5A35A291EE0850090C75F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF5A35C291EE0850090C75F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				FBEF80A92922C0830066AC0B /* HomeViewController.swift */,
+				FBF538CF292571BA00197054 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				FBF538C929252EEA00197054 /* Movie.swift */,
+				FBF538D02925723B00197054 /* Network.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,8 +132,17 @@
 				FBEF80A329228FE60066AC0B /* UIAlert.swift */,
 				FBEF80A5292290000066AC0B /* UIColor.swift */,
 				FBEF80A7292290130066AC0B /* UIView.swift */,
+				FBF538CD292569D200197054 /* String+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBF538CF292571BA00197054 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBF538CB2925598700197054 /* MovieTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FBF5A34E291EE0850090C75F = {
@@ -316,12 +333,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF538CC2925598700197054 /* MovieTableViewCell.swift in Sources */,
 				FBF538CA29252EEA00197054 /* Movie.swift in Sources */,
+				FBF538D12925723B00197054 /* Network.swift in Sources */,
 				FBEF80A429228FE60066AC0B /* UIAlert.swift in Sources */,
 				FBEF80A6292290000066AC0B /* UIColor.swift in Sources */,
 				FBF5A365291EE0850090C75F /* _DaysOfCode.xcdatamodeld in Sources */,
 				FBEF80AA2922C0830066AC0B /* HomeViewController.swift in Sources */,
 				FBEF80A8292290130066AC0B /* UIView.swift in Sources */,
+				FBF538CE292569D200197054 /* String+.swift in Sources */,
 				FBF5A35F291EE0850090C75F /* ViewController.swift in Sources */,
 				FBF5A35B291EE0850090C75F /* AppDelegate.swift in Sources */,
 				FBF5A35D291EE0850090C75F /* SceneDelegate.swift in Sources */,

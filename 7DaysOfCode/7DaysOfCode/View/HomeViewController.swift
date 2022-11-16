@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
     }()
     
     func setLayout() {
+        navigationItem.backButtonTitle = "Voltar"
         view.addSubview(titleLabel)
         view.addSubview(tableView)
         
@@ -54,15 +55,20 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = movie[indexPath.row].title
-        cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .white
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell") as? MovieTableViewCell {
+            cell.selectionStyle = .none
+            cell.configureCell(movie: movies[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+//        cell.textLabel?.text = movie[indexPath.row].title
+//        cell.backgroundColor = .clear
+//        cell.textLabel?.textColor = .white
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movie.count
+        return movies.count
     }
     
     
