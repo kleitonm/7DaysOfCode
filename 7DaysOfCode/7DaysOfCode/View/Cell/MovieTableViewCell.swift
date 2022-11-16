@@ -8,8 +8,8 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
-
-    private lazy var titlelabel: UILabel = {
+    
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
@@ -26,32 +26,31 @@ class MovieTableViewCell: UITableViewCell {
     }()
     
     private lazy var imagePoster: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 18.0
-        image.layer.masksToBounds = true
-        image.backgroundColor = .red
-        return image
+        let imgView = UIImageView()
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.layer.cornerRadius = 18.0
+        imgView.layer.masksToBounds = true
+        imgView.backgroundColor = .red
+        return imgView
     }()
     
     private lazy var textStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        [titlelabel, releaseDateLabel].forEach { view in
+        [titleLabel, releaseDateLabel].forEach { view in
             stack.addArrangedSubview(view)
         }
         stack.distribution = .fillProportionally
         stack.spacing = 8
-       return stack
+        return stack
     }()
     
     private lazy var mainStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        [imagePoster, textStackView].forEach {
-            view in
+        [imagePoster, textStackView].forEach { view in
             stack.addArrangedSubview(view)
         }
         stack.distribution = .fillProportionally
@@ -59,14 +58,14 @@ class MovieTableViewCell: UITableViewCell {
         stack.alignment = .center
         return stack
     }()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setLayout()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implementd")
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -75,12 +74,11 @@ class MovieTableViewCell: UITableViewCell {
     
     func configureCell(movie: Movie) {
         setConstraints()
-        titlelabel.text = movie.title
+        titleLabel.text = movie.title
         releaseDateLabel.text = "Lançamento: \(movie.releaseDate.formatDate())"
     }
     
-
-    func setLayout() {
+    private func setLayout() {
         backgroundColor = .clear
     }
     
@@ -95,6 +93,6 @@ class MovieTableViewCell: UITableViewCell {
             imagePoster.widthAnchor.constraint(equalToConstant: 90),
             imagePoster.heightAnchor.constraint(equalToConstant: 120),
         ])
-        
     }
+
 }

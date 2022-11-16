@@ -10,10 +10,21 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    
+    private var requestNetworking = Network()
+    private var movies: [Movie] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackground()
         setLayout()
+        getPopularMovies()
     }
     
     private lazy var titleLabel: UILabel = {
@@ -34,13 +45,19 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
+    private func getPopularMovies() {
+        requestNetworking.fetchPopularMovies { movies in
+            self.movies = movies
+        }
+    }
+    
     func setLayout() {
-        navigationItem.backButtonTitle = "Voltar"
+//        navigationItem.backButtonTitle = "Voltar"
         view.addSubview(titleLabel)
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-        
+            
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
@@ -58,9 +75,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell") as? MovieTableViewCell {
             cell.selectionStyle = .none
             cell.configureCell(movie: movies[indexPath.row])
-            return cell
-        }
-        return UITableViewCell()
+                return cell
+            }
+       return UITableViewCell()
 //        cell.textLabel?.text = movie[indexPath.row].title
 //        cell.backgroundColor = .clear
 //        cell.textLabel?.textColor = .white
