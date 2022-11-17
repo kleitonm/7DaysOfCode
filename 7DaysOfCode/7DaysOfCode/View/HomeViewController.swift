@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "movieCell")
         tableView.separatorStyle = .none
         return tableView
     }()
@@ -52,7 +53,7 @@ class HomeViewController: UIViewController {
     }
     
     func setLayout() {
-//        navigationItem.backButtonTitle = "Voltar"
+        navigationItem.backButtonTitle = "Voltar"
         view.addSubview(titleLabel)
         view.addSubview(tableView)
         
@@ -88,5 +89,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return movies.count
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailsVC = DetailsViewController(movie: movies[indexPath.row])
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
 }
