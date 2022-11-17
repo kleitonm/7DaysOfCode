@@ -3,8 +3,6 @@ Alura 7 day challenge
 
 Neste #7DaysOfCode, o seu objetivo será construir uma aplicação iOS que consome dados de uma API externa e os exibe através de uma tabela.
 
-![Captura de Tela 2022-11-11 às 16 46 53](https://user-images.githubusercontent.com/17858685/201419253-ab1381ac-df7a-4c58-a107-47fef0b2c4fd.png)
-
 # Filmes mais populares no momento
 
 Aplicativo que consome os filmes mais populares no momento de uma API externa chamada The Movie Database.
@@ -21,14 +19,10 @@ O projeto permite verificar quais são os filmes mais populares no momento, em o
 ## ✔️ Técnicas e tecnologias utilizadas
 
 - `Swift`: Linguagem de programação para desenvolver apps iOS
-- `MVC`: Padrão de arquitetura de código
+- `MVVM`: Padrão de arquitetura de código
 - `UIKit`: Framework para criação de um aplicativo
-- `Cocoapods`: Gerenciador de dependências
+- `SPM`: Gerenciador de dependências
 - `View Code`: Construção de layouts de forma programática (sem usar storyboard ou XIB)
-
-## 📁 Acesso ao projeto
-
-Você pode acessar o [código fonte do projeto](https://github.com/alura-cursos/7daysofcode-ios), [baixá-lo](https://github.com/alura-cursos/7daysofcode-ios/archive/refs/heads/main.zip) ou até mesmo acessar o código por cada dia do desafio nas respectivas `branches`.
 
 ## 🛠️ Abrir e rodar o projeto
 
