@@ -27,6 +27,10 @@ class HomeViewController: UIViewController {
         getPopularMovies()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +42,7 @@ class HomeViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
@@ -79,10 +84,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
        return UITableViewCell()
-//        cell.textLabel?.text = movie[indexPath.row].title
-//        cell.backgroundColor = .clear
-//        cell.textLabel?.textColor = .white
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -32,6 +32,7 @@ class MovieTableViewCell: UITableViewCell {
         imgView.layer.cornerRadius = 18.0
         imgView.layer.masksToBounds = true
         imgView.backgroundColor = .red
+        imgView.contentMode = .scaleToFill
         return imgView
     }()
     
@@ -73,15 +74,12 @@ class MovieTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    private func configureImage(_ imageURL: String) {
-        let url = URL(string: "https://image.tmdb.org/t/p/w500\(imageURL)")
-        imagePoster.kf.setImage(with: url)
-    }
-    
     func configureCell(movie: Movie) {
         setConstraints()
         titleLabel.text = movie.title
         releaseDateLabel.text = "Lançamento: \(movie.releaseDate.formatDate())"
+        guard let imageURL = movie.image else { return }
+        imagePoster.configureImage(imageURL)
     }
     
     private func setLayout() {
